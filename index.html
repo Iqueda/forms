@@ -6,5 +6,30 @@
     <title>React App</title>
   </head>
   <body>
+    <h1>Formulário</h1>
+    <form id="form" novalidate>
+      <label htmlfor="nome">Nome</label>
+      <input class="" type="text" name="nome" id="nome">
+      <label>Email</label>
+      <input type="email" name="email" id="email">
+      <button type="button">Cancelar</button>
+      <button type="submit" id="formSend">Enviar</button>
+    </form>
+    <script type="text/javascript">
+      var form = document.querySelector('#form');
+      var buttonSend = document.querySelector('#formSend');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var name = form.elements.nome.value;
+        var email = form.elements.email.value;
+        var dados = {
+          name: name,
+          email: email,
+          created_at: Date.now()
+        }
+        console.log(dados);
+      })
+    </script>
   </body>
 </html>
